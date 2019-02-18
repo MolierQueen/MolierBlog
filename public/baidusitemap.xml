@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://oliverqueen.cn/2019/02/14/At-the-end-of-2018/</loc>
-    <lastmod>2019-02-18T11:02:58.209Z</lastmod>
+    <lastmod>2019-02-18T11:15:37.467Z</lastmod>
     <data>
         <display>
         <title>At The End Of 2018</title>
@@ -52,28 +52,6 @@
 
     
   <url>
-    <loc>https://oliverqueen.cn/2018/02/12/At-The-End-Of-2017/</loc>
-    <lastmod>2019-02-02T03:22:53.093Z</lastmod>
-    <data>
-        <display>
-        <title>At The End Of 2017</title>
-        <pubTime>2018-02-12T07:47:45.000Z</pubTime>
-        
-        <tag>总结</tag>
-         
-        <tag>回味2017展望2018</tag>
-         
-         
-           
-             
-              <breadCrumb title="闲谈" url="https://oliverqueen.cn/categories/%E9%97%B2%E8%B0%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://oliverqueen.cn/2018/02/11/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E6%8F%92%E4%BB%B6%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2019-02-02T03:22:53.093Z</lastmod>
     <data>
@@ -93,6 +71,28 @@
            
              
               <breadCrumb title="通用开发" url="https://oliverqueen.cn/categories/%E9%80%9A%E7%94%A8%E5%BC%80%E5%8F%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://oliverqueen.cn/2018/02/12/At-The-End-Of-2017/</loc>
+    <lastmod>2019-02-02T03:22:53.093Z</lastmod>
+    <data>
+        <display>
+        <title>At The End Of 2017</title>
+        <pubTime>2018-02-12T07:47:45.000Z</pubTime>
+        
+        <tag>总结</tag>
+         
+        <tag>回味2017展望2018</tag>
+         
+         
+           
+             
+              <breadCrumb title="闲谈" url="https://oliverqueen.cn/categories/%E9%97%B2%E8%B0%88/"/>
           
         </display>
     </data>
@@ -165,28 +165,6 @@
     
     
   <url>
-    <loc>https://oliverqueen.cn/2018/08/23/GitFlow/</loc>
-    <lastmod>2019-02-02T03:22:53.093Z</lastmod>
-    <data>
-        <display>
-        <title>GitFlow流程</title>
-        <pubTime>2018-08-23T06:20:39.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-        <tag>效率工作</tag>
-         
-         
-           
-             
-              <breadCrumb title="iOS开发" url="https://oliverqueen.cn/categories/iOS%E5%BC%80%E5%8F%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://oliverqueen.cn/2018/08/23/ChangeSvnToGit/</loc>
     <lastmod>2019-02-02T03:22:53.093Z</lastmod>
     <data>
@@ -202,6 +180,28 @@
            
              
               <breadCrumb title="通用开发" url="https://oliverqueen.cn/categories/%E9%80%9A%E7%94%A8%E5%BC%80%E5%8F%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://oliverqueen.cn/2018/08/23/GitFlow/</loc>
+    <lastmod>2019-02-02T03:22:53.093Z</lastmod>
+    <data>
+        <display>
+        <title>GitFlow流程</title>
+        <pubTime>2018-08-23T06:20:39.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+        <tag>效率工作</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS开发" url="https://oliverqueen.cn/categories/iOS%E5%BC%80%E5%8F%91/"/>
           
         </display>
     </data>
@@ -236,30 +236,6 @@
     
     
   <url>
-    <loc>https://oliverqueen.cn/2018/01/24/%E8%AE%B0%E4%B8%80%E6%AC%A1Runtime-Hook%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2019-02-02T03:22:53.083Z</lastmod>
-    <data>
-        <display>
-        <title>记一次Runtime Hook的问题</title>
-        <pubTime>2018-01-24T03:35:57.000Z</pubTime>
-        
-        <tag>底层</tag>
-         
-        <tag>runtime</tag>
-         
-        <tag>Hook</tag>
-         
-         
-           
-             
-              <breadCrumb title="iOS开发" url="https://oliverqueen.cn/categories/iOS%E5%BC%80%E5%8F%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://oliverqueen.cn/2018/01/24/%E8%BD%AC-%E5%A6%82%E4%BD%95%E6%8E%8C%E6%8F%A1%E6%89%80%E6%9C%89%E7%9A%84%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/</loc>
     <lastmod>2019-02-02T03:22:53.083Z</lastmod>
     <data>
@@ -268,6 +244,30 @@
         <pubTime>2018-01-24T03:38:59.000Z</pubTime>
         
         <tag>杂谈</tag>
+         
+         
+           
+             
+              <breadCrumb title="通用开发" url="https://oliverqueen.cn/categories/%E9%80%9A%E7%94%A8%E5%BC%80%E5%8F%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://oliverqueen.cn/2018/01/25/%E5%8F%AF%E8%83%BD%E6%98%AF%E6%9C%80%E5%85%A8%E7%9A%84%E4%BD%BF%E7%94%A8HEXO%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2019-02-02T03:22:53.083Z</lastmod>
+    <data>
+        <display>
+        <title>可能是最全的使用HEXO搭建个人博客教程</title>
+        <pubTime>2018-01-25T07:43:15.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>个人博客</tag>
+         
+        <tag>网站</tag>
          
          
            
@@ -304,30 +304,6 @@
 
     
   <url>
-    <loc>https://oliverqueen.cn/2018/02/08/%E5%85%B3%E4%BA%8EiPhone-X%E4%B8%8BHome%E9%94%AE%E7%9A%84%E9%9A%90%E8%97%8F%E5%92%8C%E5%BB%B6%E8%BF%9F%E5%93%8D%E5%BA%94/</loc>
-    <lastmod>2019-02-02T03:22:53.083Z</lastmod>
-    <data>
-        <display>
-        <title>关于iPhone X下Home键的隐藏和延迟响应</title>
-        <pubTime>2018-02-08T02:15:57.000Z</pubTime>
-        
-        <tag>UI</tag>
-         
-        <tag>屏幕适配</tag>
-         
-        <tag>iOS 11</tag>
-         
-         
-           
-             
-              <breadCrumb title="iOS开发" url="https://oliverqueen.cn/categories/iOS%E5%BC%80%E5%8F%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://oliverqueen.cn/2018/01/23/IOS%E4%B8%8B%E4%B8%89%E7%A7%8DDNS%E8%A7%A3%E6%9E%90%E6%96%B9%E5%BC%8F%E5%88%86%E6%9E%90%EF%BC%88LocalDns%EF%BC%89/</loc>
     <lastmod>2019-02-02T03:22:53.083Z</lastmod>
     <data>
@@ -350,45 +326,23 @@
 
     
   <url>
-    <loc>https://oliverqueen.cn/2018/01/23/%E5%85%B3%E4%BA%8E%E8%A7%86%E5%9B%BE%E5%9C%A8%E5%88%87%E5%9C%86%E8%A7%92%E6%97%B6%E5%80%99%E7%9A%84%E5%AF%BC%E8%87%B4%E7%9A%84%E6%80%A7%E8%83%BD%E4%B8%8B%E9%99%8D%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8E%A2%E8%AE%A8/</loc>
+    <loc>https://oliverqueen.cn/2018/02/08/%E5%85%B3%E4%BA%8EiPhone-X%E4%B8%8BHome%E9%94%AE%E7%9A%84%E9%9A%90%E8%97%8F%E5%92%8C%E5%BB%B6%E8%BF%9F%E5%93%8D%E5%BA%94/</loc>
     <lastmod>2019-02-02T03:22:53.083Z</lastmod>
     <data>
         <display>
-        <title>关于视图在切圆角时候的导致的性能下降的一些探讨</title>
-        <pubTime>2018-01-23T13:08:48.000Z</pubTime>
+        <title>关于iPhone X下Home键的隐藏和延迟响应</title>
+        <pubTime>2018-02-08T02:15:57.000Z</pubTime>
         
         <tag>UI</tag>
          
-        <tag>性能优化</tag>
+        <tag>屏幕适配</tag>
+         
+        <tag>iOS 11</tag>
          
          
            
              
               <breadCrumb title="iOS开发" url="https://oliverqueen.cn/categories/iOS%E5%BC%80%E5%8F%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://oliverqueen.cn/2018/01/25/%E5%8F%AF%E8%83%BD%E6%98%AF%E6%9C%80%E5%85%A8%E7%9A%84%E4%BD%BF%E7%94%A8HEXO%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2019-02-02T03:22:53.083Z</lastmod>
-    <data>
-        <display>
-        <title>可能是最全的使用HEXO搭建个人博客教程</title>
-        <pubTime>2018-01-25T07:43:15.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-        <tag>个人博客</tag>
-         
-        <tag>网站</tag>
-         
-         
-           
-             
-              <breadCrumb title="通用开发" url="https://oliverqueen.cn/categories/%E9%80%9A%E7%94%A8%E5%BC%80%E5%8F%91/"/>
           
         </display>
     </data>
@@ -418,13 +372,17 @@
 
     
   <url>
-    <loc>https://oliverqueen.cn/2018/01/23/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Http%E8%AF%B7%E6%B1%82%E3%80%81DNS%E5%8A%AB%E6%8C%81%E4%B8%8E%E8%A7%A3%E6%9E%90/</loc>
+    <loc>https://oliverqueen.cn/2018/01/23/%E5%85%B3%E4%BA%8E%E8%A7%86%E5%9B%BE%E5%9C%A8%E5%88%87%E5%9C%86%E8%A7%92%E6%97%B6%E5%80%99%E7%9A%84%E5%AF%BC%E8%87%B4%E7%9A%84%E6%80%A7%E8%83%BD%E4%B8%8B%E9%99%8D%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8E%A2%E8%AE%A8/</loc>
     <lastmod>2019-02-02T03:22:53.083Z</lastmod>
     <data>
         <display>
-        <title>深入理解Http请求、DNS劫持与解析</title>
-        <pubTime>2018-01-23T10:12:18.000Z</pubTime>
+        <title>关于视图在切圆角时候的导致的性能下降的一些探讨</title>
+        <pubTime>2018-01-23T13:08:48.000Z</pubTime>
         
+        <tag>UI</tag>
+         
+        <tag>性能优化</tag>
+         
          
            
              
@@ -460,17 +418,13 @@
 
     
   <url>
-    <loc>https://oliverqueen.cn/2018/01/24/NSURLProtocol%E5%AF%B9WKWebView%E7%9A%84%E5%A4%84%E7%90%86/</loc>
+    <loc>https://oliverqueen.cn/2018/01/23/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Http%E8%AF%B7%E6%B1%82%E3%80%81DNS%E5%8A%AB%E6%8C%81%E4%B8%8E%E8%A7%A3%E6%9E%90/</loc>
     <lastmod>2019-02-02T03:22:53.083Z</lastmod>
     <data>
         <display>
-        <title>NSURLProtocol对WKWebView的处理</title>
-        <pubTime>2018-01-24T04:24:06.000Z</pubTime>
+        <title>深入理解Http请求、DNS劫持与解析</title>
+        <pubTime>2018-01-23T10:12:18.000Z</pubTime>
         
-        <tag>webview</tag>
-         
-        <tag>hook</tag>
-         
          
            
              
@@ -506,6 +460,28 @@
 
     
   <url>
+    <loc>https://oliverqueen.cn/2018/01/24/NSURLProtocol%E5%AF%B9WKWebView%E7%9A%84%E5%A4%84%E7%90%86/</loc>
+    <lastmod>2019-02-02T03:22:53.083Z</lastmod>
+    <data>
+        <display>
+        <title>NSURLProtocol对WKWebView的处理</title>
+        <pubTime>2018-01-24T04:24:06.000Z</pubTime>
+        
+        <tag>webview</tag>
+         
+        <tag>hook</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS开发" url="https://oliverqueen.cn/categories/iOS%E5%BC%80%E5%8F%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://oliverqueen.cn/2018/01/24/iOS-Runtime%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%EF%BC%8C%E4%BB%A5%E5%8F%8A%E4%B8%8D%E5%90%8C%E7%B1%BB%E7%9A%84Method-Swizzling/</loc>
     <lastmod>2019-02-02T03:22:53.083Z</lastmod>
     <data>
@@ -528,16 +504,18 @@
 
     
   <url>
-    <loc>https://oliverqueen.cn/2018/01/24/%E8%87%AA%E5%AE%9A%E4%B9%89AlertView/</loc>
+    <loc>https://oliverqueen.cn/2018/01/24/%E8%AE%B0%E4%B8%80%E6%AC%A1Runtime-Hook%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2019-02-02T03:22:53.083Z</lastmod>
     <data>
         <display>
-        <title>自定义AlertView</title>
-        <pubTime>2018-01-24T04:37:20.000Z</pubTime>
+        <title>记一次Runtime Hook的问题</title>
+        <pubTime>2018-01-24T03:35:57.000Z</pubTime>
         
-        <tag>UI</tag>
+        <tag>底层</tag>
          
-        <tag>AlertView</tag>
+        <tag>runtime</tag>
+         
+        <tag>Hook</tag>
          
          
            
@@ -584,6 +562,28 @@
         <tag>Cocoapods</tag>
          
         <tag>架构</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS开发" url="https://oliverqueen.cn/categories/iOS%E5%BC%80%E5%8F%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://oliverqueen.cn/2018/01/24/%E8%87%AA%E5%AE%9A%E4%B9%89AlertView/</loc>
+    <lastmod>2019-02-02T03:22:53.083Z</lastmod>
+    <data>
+        <display>
+        <title>自定义AlertView</title>
+        <pubTime>2018-01-24T04:37:20.000Z</pubTime>
+        
+        <tag>UI</tag>
+         
+        <tag>AlertView</tag>
          
          
            
