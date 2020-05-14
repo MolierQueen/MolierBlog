@@ -7,7 +7,7 @@ comments:
 top: 100
 ---
 {% cq %}Today<br>you'll view the world differently{% endcq %}
-![你好](https://ws2.sinaimg.cn/large/006tNc79ly1fnygnuhm3rj31kw0zk1ky.jpg)
+![你好](https://wx2.sinaimg.cn/large/006tNc79ly1fnygnuhm3rj31kw0zk1ky.jpg)
 welcome !!!
 <!--more-->
 
