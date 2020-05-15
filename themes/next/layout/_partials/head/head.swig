@@ -130,5 +130,5 @@
     }
   };
 </script>
-
+<meta name="referrer" content="no-referrer" />
 {% include './custom-head.swig' %}
