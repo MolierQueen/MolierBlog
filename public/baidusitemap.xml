@@ -3,6 +3,71 @@
 
 
     
+    
+  <url>
+    <loc>https://oliverqueen.cn/2018/01/19/test-source/</loc>
+    <lastmod>2021-05-03T06:04:22.310Z</lastmod>
+    <data>
+        <display>
+        <title>Welcome To My Site</title>
+        <pubTime>2018-01-19T06:37:12.000Z</pubTime>
+        
+        <tag>欢迎页</tag>
+         
+         
+           
+             
+              <breadCrumb title="其他" url="https://oliverqueen.cn/categories/%E5%85%B6%E4%BB%96/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://oliverqueen.cn/2019/02/14/At-the-end-of-2018/</loc>
+    <lastmod>2021-05-03T06:02:20.236Z</lastmod>
+    <data>
+        <display>
+        <title>At The End Of 2018</title>
+        <pubTime>2019-02-14T03:19:59.000Z</pubTime>
+        
+        <tag>总结</tag>
+         
+        <tag>回首2018展望2019</tag>
+         
+         
+           
+             
+              <breadCrumb title="闲谈" url="https://oliverqueen.cn/categories/%E9%97%B2%E8%B0%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://oliverqueen.cn/2021/05/03/%E6%9C%89%E5%8F%AF%E8%83%BD%E6%98%AF%E6%9C%80%E5%85%A8%E7%9A%84iOSCrash%E9%98%B2%E6%8A%A4%E7%AD%96%E7%95%A5/</loc>
+    <lastmod>2021-05-03T05:54:23.494Z</lastmod>
+    <data>
+        <display>
+        <title>有可能是最全的iOSCrash防护策略</title>
+        <pubTime>2021-05-02T16:00:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+        <tag>Crash防护</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS开发" url="https://oliverqueen.cn/categories/iOS%E5%BC%80%E5%8F%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
   <url>
     <loc>https://oliverqueen.cn/2020/11/28/%E6%B1%87%E7%BC%96%E5%92%8C%E6%A0%88/</loc>
     <lastmod>2020-11-28T08:46:35.579Z</lastmod>
@@ -80,28 +145,6 @@
 
     
   <url>
-    <loc>https://oliverqueen.cn/2019/02/14/At-the-end-of-2018/</loc>
-    <lastmod>2020-05-18T07:22:34.282Z</lastmod>
-    <data>
-        <display>
-        <title>At The End Of 2018</title>
-        <pubTime>2019-02-14T03:19:59.000Z</pubTime>
-        
-        <tag>总结</tag>
-         
-        <tag>回首2018展望2019</tag>
-         
-         
-           
-             
-              <breadCrumb title="闲谈" url="https://oliverqueen.cn/categories/%E9%97%B2%E8%B0%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://oliverqueen.cn/2018/06/19/MusicAbout/</loc>
     <lastmod>2020-05-18T07:22:34.280Z</lastmod>
     <data>
@@ -150,26 +193,6 @@
 
     
   <url>
-    <loc>https://oliverqueen.cn/2018/05/08/RX-Swift-Study-One/</loc>
-    <lastmod>2020-05-18T07:22:34.279Z</lastmod>
-    <data>
-        <display>
-        <title>关于RxSwift的一点理解</title>
-        <pubTime>2018-05-08T02:12:00.000Z</pubTime>
-        
-        <tag>Swift</tag>
-         
-         
-           
-             
-              <breadCrumb title="译文" url="https://oliverqueen.cn/categories/%E8%AF%91%E6%96%87/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://oliverqueen.cn/2018/03/30/AlamoFire/</loc>
     <lastmod>2020-05-18T07:22:34.279Z</lastmod>
     <data>
@@ -185,6 +208,26 @@
            
              
               <breadCrumb title="iOS开发" url="https://oliverqueen.cn/categories/iOS%E5%BC%80%E5%8F%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://oliverqueen.cn/2018/05/08/RX-Swift-Study-One/</loc>
+    <lastmod>2020-05-18T07:22:34.279Z</lastmod>
+    <data>
+        <display>
+        <title>关于RxSwift的一点理解</title>
+        <pubTime>2018-05-08T02:12:00.000Z</pubTime>
+        
+        <tag>Swift</tag>
+         
+         
+           
+             
+              <breadCrumb title="译文" url="https://oliverqueen.cn/categories/%E8%AF%91%E6%96%87/"/>
           
         </display>
     </data>
@@ -385,9 +428,9 @@
         <title>可能是最全的iOS端HttpDns集成方案</title>
         <pubTime>2018-01-24T05:54:36.000Z</pubTime>
         
-        <tag>底层</tag>
-         
         <tag>网络</tag>
+         
+        <tag>底层</tag>
          
         <tag>httpdns</tag>
          
@@ -541,9 +584,9 @@
         <title>iOS中使用OpenGL实现增高功能</title>
         <pubTime>2018-01-23T13:23:49.000Z</pubTime>
         
-        <tag>OpenGL</tag>
-         
         <tag>底层</tag>
+         
+        <tag>OpenGL</tag>
          
         <tag>UI</tag>
          
@@ -580,28 +623,6 @@
 
     
   <url>
-    <loc>https://oliverqueen.cn/2018/01/23/CFNetwork%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%92%8C%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2020-05-18T07:22:34.251Z</lastmod>
-    <data>
-        <display>
-        <title>CFNetwork的介绍和使用</title>
-        <pubTime>2018-01-23T13:04:15.000Z</pubTime>
-        
-        <tag>底层</tag>
-         
-        <tag>网络</tag>
-         
-         
-           
-             
-              <breadCrumb title="iOS开发" url="https://oliverqueen.cn/categories/iOS%E5%BC%80%E5%8F%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://oliverqueen.cn/2018/01/23/IOS%E4%B8%8B%E4%B8%89%E7%A7%8DDNS%E8%A7%A3%E6%9E%90%E6%96%B9%E5%BC%8F%E5%88%86%E6%9E%90%EF%BC%88LocalDns%EF%BC%89/</loc>
     <lastmod>2020-05-18T07:22:34.251Z</lastmod>
     <data>
@@ -624,19 +645,21 @@
 
     
   <url>
-    <loc>https://oliverqueen.cn/2018/01/19/test-source/</loc>
-    <lastmod>2020-05-18T07:22:34.250Z</lastmod>
+    <loc>https://oliverqueen.cn/2018/01/23/CFNetwork%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%92%8C%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2020-05-18T07:22:34.251Z</lastmod>
     <data>
         <display>
-        <title>Welcome To My Site</title>
-        <pubTime>2018-01-19T06:37:12.000Z</pubTime>
+        <title>CFNetwork的介绍和使用</title>
+        <pubTime>2018-01-23T13:04:15.000Z</pubTime>
         
-        <tag>欢迎页</tag>
+        <tag>网络</tag>
+         
+        <tag>底层</tag>
          
          
            
              
-              <breadCrumb title="其他" url="https://oliverqueen.cn/categories/%E5%85%B6%E4%BB%96/"/>
+              <breadCrumb title="iOS开发" url="https://oliverqueen.cn/categories/iOS%E5%BC%80%E5%8F%91/"/>
           
         </display>
     </data>
@@ -704,7 +727,6 @@
     </data>
     </url>
 
-    
     
     
     
