@@ -3,6 +3,52 @@
 
 
     
+  <url>
+    <loc>https://oliverqueen.cn/2021/05/03/%E6%9C%89%E5%8F%AF%E8%83%BD%E6%98%AF%E6%9C%80%E5%85%A8%E7%9A%84iOSCrash%E9%98%B2%E6%8A%A4%E7%AD%96%E7%95%A5/</loc>
+    <lastmod>2021-05-04T16:18:39.843Z</lastmod>
+    <data>
+        <display>
+        <title>iOS Crash防护你看这个就够了 - 上篇</title>
+        <pubTime>2021-05-02T16:00:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+        <tag>Crash防护</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS开发" url="https://oliverqueen.cn/categories/iOS%E5%BC%80%E5%8F%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://oliverqueen.cn/2018/01/19/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%9A%84%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3%F0%9F%98%8A/</loc>
+    <lastmod>2021-05-03T06:44:24.313Z</lastmod>
+    <data>
+        <display>
+        <title>位运算的简单理解😊</title>
+        <pubTime>2018-01-19T06:20:39.000Z</pubTime>
+        
+        <tag>算法</tag>
+         
+        <tag>C语言</tag>
+         
+        <tag>排序</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS开发" url="https://oliverqueen.cn/categories/iOS%E5%BC%80%E5%8F%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>https://oliverqueen.cn/2018/01/19/test-source/</loc>
@@ -40,28 +86,6 @@
            
              
               <breadCrumb title="闲谈" url="https://oliverqueen.cn/categories/%E9%97%B2%E8%B0%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://oliverqueen.cn/2021/05/03/%E6%9C%89%E5%8F%AF%E8%83%BD%E6%98%AF%E6%9C%80%E5%85%A8%E7%9A%84iOSCrash%E9%98%B2%E6%8A%A4%E7%AD%96%E7%95%A5/</loc>
-    <lastmod>2021-05-03T05:54:23.494Z</lastmod>
-    <data>
-        <display>
-        <title>有可能是最全的iOSCrash防护策略</title>
-        <pubTime>2021-05-02T16:00:00.000Z</pubTime>
-        
-        <tag>iOS</tag>
-         
-        <tag>Crash防护</tag>
-         
-         
-           
-             
-              <breadCrumb title="iOS开发" url="https://oliverqueen.cn/categories/iOS%E5%BC%80%E5%8F%91/"/>
           
         </display>
     </data>
@@ -145,6 +169,28 @@
 
     
   <url>
+    <loc>https://oliverqueen.cn/2018/08/23/GitFlow/</loc>
+    <lastmod>2020-05-18T07:22:34.280Z</lastmod>
+    <data>
+        <display>
+        <title>GitFlow流程</title>
+        <pubTime>2018-08-23T06:20:39.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+        <tag>效率工作</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS开发" url="https://oliverqueen.cn/categories/iOS%E5%BC%80%E5%8F%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://oliverqueen.cn/2018/06/19/MusicAbout/</loc>
     <lastmod>2020-05-18T07:22:34.280Z</lastmod>
     <data>
@@ -171,21 +217,19 @@
 
     
   <url>
-    <loc>https://oliverqueen.cn/2018/08/23/GitFlow/</loc>
-    <lastmod>2020-05-18T07:22:34.280Z</lastmod>
+    <loc>https://oliverqueen.cn/2018/05/08/RX-Swift-Study-One/</loc>
+    <lastmod>2020-05-18T07:22:34.279Z</lastmod>
     <data>
         <display>
-        <title>GitFlow流程</title>
-        <pubTime>2018-08-23T06:20:39.000Z</pubTime>
+        <title>关于RxSwift的一点理解</title>
+        <pubTime>2018-05-08T02:12:00.000Z</pubTime>
         
-        <tag>git</tag>
-         
-        <tag>效率工作</tag>
+        <tag>Swift</tag>
          
          
            
              
-              <breadCrumb title="iOS开发" url="https://oliverqueen.cn/categories/iOS%E5%BC%80%E5%8F%91/"/>
+              <breadCrumb title="译文" url="https://oliverqueen.cn/categories/%E8%AF%91%E6%96%87/"/>
           
         </display>
     </data>
@@ -208,26 +252,6 @@
            
              
               <breadCrumb title="iOS开发" url="https://oliverqueen.cn/categories/iOS%E5%BC%80%E5%8F%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://oliverqueen.cn/2018/05/08/RX-Swift-Study-One/</loc>
-    <lastmod>2020-05-18T07:22:34.279Z</lastmod>
-    <data>
-        <display>
-        <title>关于RxSwift的一点理解</title>
-        <pubTime>2018-05-08T02:12:00.000Z</pubTime>
-        
-        <tag>Swift</tag>
-         
-         
-           
-             
-              <breadCrumb title="译文" url="https://oliverqueen.cn/categories/%E8%AF%91%E6%96%87/"/>
           
         </display>
     </data>
@@ -491,17 +515,13 @@
 
     
   <url>
-    <loc>https://oliverqueen.cn/2018/01/24/NSURLProtocol%E5%AF%B9WKWebView%E7%9A%84%E5%A4%84%E7%90%86/</loc>
+    <loc>https://oliverqueen.cn/2018/01/23/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Http%E8%AF%B7%E6%B1%82%E3%80%81DNS%E5%8A%AB%E6%8C%81%E4%B8%8E%E8%A7%A3%E6%9E%90/</loc>
     <lastmod>2020-05-18T07:22:34.254Z</lastmod>
     <data>
         <display>
-        <title>NSURLProtocol对WKWebView的处理</title>
-        <pubTime>2018-01-24T04:24:06.000Z</pubTime>
+        <title>深入理解Http请求、DNS劫持与解析</title>
+        <pubTime>2018-01-23T10:12:18.000Z</pubTime>
         
-        <tag>webview</tag>
-         
-        <tag>hook</tag>
-         
          
            
              
@@ -513,13 +533,17 @@
 
     
   <url>
-    <loc>https://oliverqueen.cn/2018/01/23/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Http%E8%AF%B7%E6%B1%82%E3%80%81DNS%E5%8A%AB%E6%8C%81%E4%B8%8E%E8%A7%A3%E6%9E%90/</loc>
+    <loc>https://oliverqueen.cn/2018/01/24/NSURLProtocol%E5%AF%B9WKWebView%E7%9A%84%E5%A4%84%E7%90%86/</loc>
     <lastmod>2020-05-18T07:22:34.254Z</lastmod>
     <data>
         <display>
-        <title>深入理解Http请求、DNS劫持与解析</title>
-        <pubTime>2018-01-23T10:12:18.000Z</pubTime>
+        <title>NSURLProtocol对WKWebView的处理</title>
+        <pubTime>2018-01-24T04:24:06.000Z</pubTime>
         
+        <tag>webview</tag>
+         
+        <tag>hook</tag>
+         
          
            
              
@@ -577,6 +601,28 @@
 
     
   <url>
+    <loc>https://oliverqueen.cn/2018/01/23/%E5%85%B3%E4%BA%8E%E7%89%A9%E7%90%86%E6%95%88%E6%9E%9C%E7%9A%84%E5%8A%A8%E7%94%BB%E5%BC%95%E6%93%8EUIDynamic%E4%BB%8B%E7%BB%8D/</loc>
+    <lastmod>2020-05-18T07:22:34.252Z</lastmod>
+    <data>
+        <display>
+        <title>关于物理效果的动画引擎UIDynamic介绍</title>
+        <pubTime>2018-01-23T13:18:42.000Z</pubTime>
+        
+        <tag>动画</tag>
+         
+        <tag>UI</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS开发" url="https://oliverqueen.cn/categories/iOS%E5%BC%80%E5%8F%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://oliverqueen.cn/2018/01/23/iOS%E4%B8%AD%E4%BD%BF%E7%94%A8OpenGL%E5%AE%9E%E7%8E%B0%E5%A2%9E%E9%AB%98%E5%8A%9F%E8%83%BD/</loc>
     <lastmod>2020-05-18T07:22:34.252Z</lastmod>
     <data>
@@ -586,53 +632,9 @@
         
         <tag>底层</tag>
          
+        <tag>UI</tag>
+         
         <tag>OpenGL</tag>
-         
-        <tag>UI</tag>
-         
-         
-           
-             
-              <breadCrumb title="iOS开发" url="https://oliverqueen.cn/categories/iOS%E5%BC%80%E5%8F%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://oliverqueen.cn/2018/01/23/%E5%85%B3%E4%BA%8E%E7%89%A9%E7%90%86%E6%95%88%E6%9E%9C%E7%9A%84%E5%8A%A8%E7%94%BB%E5%BC%95%E6%93%8EUIDynamic%E4%BB%8B%E7%BB%8D/</loc>
-    <lastmod>2020-05-18T07:22:34.252Z</lastmod>
-    <data>
-        <display>
-        <title>关于物理效果的动画引擎UIDynamic介绍</title>
-        <pubTime>2018-01-23T13:18:42.000Z</pubTime>
-        
-        <tag>UI</tag>
-         
-        <tag>动画</tag>
-         
-         
-           
-             
-              <breadCrumb title="iOS开发" url="https://oliverqueen.cn/categories/iOS%E5%BC%80%E5%8F%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://oliverqueen.cn/2018/01/23/IOS%E4%B8%8B%E4%B8%89%E7%A7%8DDNS%E8%A7%A3%E6%9E%90%E6%96%B9%E5%BC%8F%E5%88%86%E6%9E%90%EF%BC%88LocalDns%EF%BC%89/</loc>
-    <lastmod>2020-05-18T07:22:34.251Z</lastmod>
-    <data>
-        <display>
-        <title>IOS下三种DNS解析方式分析（LocalDns）</title>
-        <pubTime>2018-01-23T10:02:29.000Z</pubTime>
-        
-        <tag>DNS解析</tag>
-         
-        <tag>LocalDNS</tag>
          
          
            
@@ -667,18 +669,16 @@
 
     
   <url>
-    <loc>https://oliverqueen.cn/2018/01/19/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%9A%84%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3%F0%9F%98%8A/</loc>
-    <lastmod>2020-05-14T09:51:04.108Z</lastmod>
+    <loc>https://oliverqueen.cn/2018/01/23/IOS%E4%B8%8B%E4%B8%89%E7%A7%8DDNS%E8%A7%A3%E6%9E%90%E6%96%B9%E5%BC%8F%E5%88%86%E6%9E%90%EF%BC%88LocalDns%EF%BC%89/</loc>
+    <lastmod>2020-05-18T07:22:34.251Z</lastmod>
     <data>
         <display>
-        <title>位运算的简单理解😊</title>
-        <pubTime>2018-01-19T06:20:39.000Z</pubTime>
+        <title>IOS下三种DNS解析方式分析（LocalDns）</title>
+        <pubTime>2018-01-23T10:02:29.000Z</pubTime>
         
-        <tag>算法</tag>
+        <tag>DNS解析</tag>
          
-        <tag>C语言</tag>
-         
-        <tag>排序</tag>
+        <tag>LocalDNS</tag>
          
          
            
