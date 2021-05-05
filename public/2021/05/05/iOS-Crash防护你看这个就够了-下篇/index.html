@@ -117,13 +117,13 @@
   <meta name="keywords" content="iOS,Crash防护," />
 
 
-<meta name="description" content="0x1: Previously上篇 中讲到了Crash处理流程分为四个环节，也分析了Crash防护的方法，本章来讲下其余三个环节。">
+<meta name="description" content="0x1: Previously上篇 中讲到了Crash处理流程分为四个环节，也分析了Crash防护的方法，本章来讲下其余三个环节。 0x2: Crash的拦截所有的未被防护住的Crash最终会走到这里，在这里我们必须要保证拦截的 全面性、稳定性尽可能多的拦截到所有类型的异常，同时拦截逻辑本身不能产生异常。那么我们需要通过以下几个方面去考虑。">
 <meta name="keywords" content="iOS,Crash防护">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS Crash防护你看这个就够了-下篇">
 <meta property="og:url" content="https://oliverqueen.cn/2021/05/05/iOS-Crash防护你看这个就够了-下篇/index.html">
 <meta property="og:site_name" content="Molier">
-<meta property="og:description" content="0x1: Previously上篇 中讲到了Crash处理流程分为四个环节，也分析了Crash防护的方法，本章来讲下其余三个环节。">
+<meta property="og:description" content="0x1: Previously上篇 中讲到了Crash处理流程分为四个环节，也分析了Crash防护的方法，本章来讲下其余三个环节。 0x2: Crash的拦截所有的未被防护住的Crash最终会走到这里，在这里我们必须要保证拦截的 全面性、稳定性尽可能多的拦截到所有类型的异常，同时拦截逻辑本身不能产生异常。那么我们需要通过以下几个方面去考虑。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fdingyue.ws.126.net%2F2020%2F0504%2Fa0ef0444j00q9saus002gc000xc00irm.jpg&refer=http%3A%2F%2Fdingyue.ws.126.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1622826899&t=2b1dd016c1ac10c52097431b7fa9af7d">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gq7dqhr2e2j31860qg79l.jpg">
@@ -140,10 +140,10 @@
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gq810qv4osj317e0nawla.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gq814a1gryj31f00ac3zo.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gq81k7k7xcj30cq0um0wg.jpg">
-<meta property="og:updated_time" content="2021-05-05T17:16:05.927Z">
+<meta property="og:updated_time" content="2021-05-05T17:18:17.306Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS Crash防护你看这个就够了-下篇">
-<meta name="twitter:description" content="0x1: Previously上篇 中讲到了Crash处理流程分为四个环节，也分析了Crash防护的方法，本章来讲下其余三个环节。">
+<meta name="twitter:description" content="0x1: Previously上篇 中讲到了Crash处理流程分为四个环节，也分析了Crash防护的方法，本章来讲下其余三个环节。 0x2: Crash的拦截所有的未被防护住的Crash最终会走到这里，在这里我们必须要保证拦截的 全面性、稳定性尽可能多的拦截到所有类型的异常，同时拦截逻辑本身不能产生异常。那么我们需要通过以下几个方面去考虑。">
 <meta name="twitter:image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fdingyue.ws.126.net%2F2020%2F0504%2Fa0ef0444j00q9saus002gc000xc00irm.jpg&refer=http%3A%2F%2Fdingyue.ws.126.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1622826899&t=2b1dd016c1ac10c52097431b7fa9af7d">
 
 
@@ -378,7 +378,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-05-06T01:16:05+08:00">2021-05-06</time>
+              <time title="更新于" itemprop="dateModified" datetime="2021-05-06T01:18:17+08:00">2021-05-06</time>
             
           </span>
 
@@ -434,9 +434,9 @@
 
       
         <script src="/assets/js/APlayer.min.js"> </script><h1 id="0x1-Previously"><a href="#0x1-Previously" class="headerlink" title="0x1: Previously"></a>0x1: Previously</h1><p><a href="https://oliverqueen.cn/2021/05/03/%E6%9C%89%E5%8F%AF%E8%83%BD%E6%98%AF%E6%9C%80%E5%85%A8%E7%9A%84iOSCrash%E9%98%B2%E6%8A%A4%E7%AD%96%E7%95%A5/">上篇</a> 中讲到了Crash处理流程分为四个环节，也分析了Crash防护的方法，本章来讲下其余三个环节。</p>
-<a id="more"></a>
 <h1 id="0x2-Crash的拦截"><a href="#0x2-Crash的拦截" class="headerlink" title="0x2: Crash的拦截"></a>0x2: Crash的拦截</h1><p>所有的未被防护住的Crash最终会走到这里，在这里我们必须要保证拦截的 <code>全面性</code>、<code>稳定性</code>尽可能多的拦截到所有类型的异常，同时拦截逻辑本身不能产生异常。那么我们需要通过以下几个方面去考虑。</p>
 <p><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fdingyue.ws.126.net%2F2020%2F0504%2Fa0ef0444j00q9saus002gc000xc00irm.jpg&amp;refer=http%3A%2F%2Fdingyue.ws.126.net&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1622826899&amp;t=2b1dd016c1ac10c52097431b7fa9af7d" alt=""></p>
+<a id="more"></a>
 <h2 id="I-Crash类型"><a href="#I-Crash类型" class="headerlink" title="I: Crash类型"></a>I: Crash类型</h2><p>和多数操作系统一样，iOS的异常也基本分为 <code>用户层</code> <code>系统底层</code> <code>信号</code> 这三个类别，接下来我们看下每种异常都做了哪些事情</p>
 <p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gq7dqhr2e2j31860qg79l.jpg" alt=""></p>
 <ul>
@@ -561,10 +561,10 @@
 </ul>
 <h1 id="0x6-最后"><a href="#0x6-最后" class="headerlink" title="0x6: 最后"></a>0x6: 最后</h1><p>大概这就是所有Crash防护的流程，通过两篇文章讲解，希望大家对iOS系统的Crash流程能有些许的了解，并没有贴太多的源码，其实还是解耦度不够，思路有了代码就很简单了。</p>
 
-			<div id="aplayer7" class="aplayer" style="margin-bottom: 20px;"></div>
+			<div id="aplayer8" class="aplayer" style="margin-bottom: 20px;"></div>
 			<script>
 				var options = {"narrow":false,"autoplay":true,"showlrc":0,"mutex":true,"music":[{"title":"错位时空","author":"艾辰","url":"https://molier-1256056152.cos.ap-guangzhou.myqcloud.com/%E8%89%BE%E8%BE%B0%20-%20%E9%94%99%E4%BD%8D%E6%97%B6%E7%A9%BA.mp3","pic":"https://bkimg.cdn.bcebos.com/pic/a8ec8a13632762d0f7037ac288a71ffa513d26976830?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2UxMTY=,g_7,xp_5,yp_5/format,f_auto","lrc":"https://歌词.lrc"}]};
-				options.element = document.getElementById("aplayer7");
+				options.element = document.getElementById("aplayer8");
 				new APlayer(options);
 			</script>
 
