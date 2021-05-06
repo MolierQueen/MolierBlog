@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://oliverqueen.cn/2021/05/05/iOS-Crash%E9%98%B2%E6%8A%A4%E4%BD%A0%E7%9C%8B%E8%BF%99%E4%B8%AA%E5%B0%B1%E5%A4%9F%E4%BA%86-%E4%B8%8B%E7%AF%87/</loc>
-    <lastmod>2021-05-05T17:18:17.306Z</lastmod>
+    <lastmod>2021-05-06T03:14:16.588Z</lastmod>
     <data>
         <display>
         <title>iOS Crash防护你看这个就够了-下篇</title>
@@ -217,6 +217,26 @@
 
     
   <url>
+    <loc>https://oliverqueen.cn/2018/05/08/RX-Swift-Study-One/</loc>
+    <lastmod>2020-05-18T07:22:34.279Z</lastmod>
+    <data>
+        <display>
+        <title>关于RxSwift的一点理解</title>
+        <pubTime>2018-05-08T02:12:00.000Z</pubTime>
+        
+        <tag>Swift</tag>
+         
+         
+           
+             
+              <breadCrumb title="译文" url="https://oliverqueen.cn/categories/%E8%AF%91%E6%96%87/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://oliverqueen.cn/2018/03/30/AlamoFire/</loc>
     <lastmod>2020-05-18T07:22:34.279Z</lastmod>
     <data>
@@ -232,26 +252,6 @@
            
              
               <breadCrumb title="iOS开发" url="https://oliverqueen.cn/categories/iOS%E5%BC%80%E5%8F%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://oliverqueen.cn/2018/05/08/RX-Swift-Study-One/</loc>
-    <lastmod>2020-05-18T07:22:34.279Z</lastmod>
-    <data>
-        <display>
-        <title>关于RxSwift的一点理解</title>
-        <pubTime>2018-05-08T02:12:00.000Z</pubTime>
-        
-        <tag>Swift</tag>
-         
-         
-           
-             
-              <breadCrumb title="译文" url="https://oliverqueen.cn/categories/%E8%AF%91%E6%96%87/"/>
           
         </display>
     </data>
