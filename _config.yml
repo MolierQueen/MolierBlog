@@ -94,5 +94,5 @@ baidusitemap:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/MolierQueen/molierqueen.github.io.git
+  repo: git@github.com:MolierQueen/molierqueen.github.io.git
   branch: master

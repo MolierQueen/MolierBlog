@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-mac-osx.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="KAj10O4WT-YoszaSxxDUTKP4VzNZxQwduVLhOojJJ7U" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+<meta name="referrer" content="no-referrer" />
+
+
+
+  
+  <meta name="keywords" content="iOS,Apple登录," />
+
+
+<meta name="description" content="1：背景2019年苹果推出 苹果登录（Sign in with Apple）方式，要求2020年4月之后运行在iOS13及以上系统的APP如果使用第三方或社交登录服务（如 Facebook、谷歌、 Twitter、Linkedln或亚马逊等），必须向用户提供“以苹果账号登录”服务的选项。其中苹果的审核细则4.8也明确的规定了这一点。">
+<meta name="keywords" content="iOS,Apple登录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Apple登录流程详解">
+<meta property="og:url" content="https://oliverqueen.cn/2022/05/26/Apple登录流程详解/index.html">
+<meta property="og:site_name" content="Molier">
+<meta property="og:description" content="1：背景2019年苹果推出 苹果登录（Sign in with Apple）方式，要求2020年4月之后运行在iOS13及以上系统的APP如果使用第三方或社交登录服务（如 Facebook、谷歌、 Twitter、Linkedln或亚马逊等），必须向用户提供“以苹果账号登录”服务的选项。其中苹果的审核细则4.8也明确的规定了这一点。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1h2lmep99kij21ns0rkaba.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1h2fzjjwwuaj21640p444d.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1h2g28b5w8aj21960u0769.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1h2g335dozbj219o0kiwg6.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1h2g36gha89j216x0u0gnx.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1h2g38wg6kij20ia08qmxk.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1h2g3em4u2oj21fq0lc75x.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1h2g3hh2cz2j216m0ms406.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1h2g3kyolw0j21m10u043i.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1h2g3ps0bfjj21v70u0td1.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1h2g3qw6gvmj22120s0dkq.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1h2g3umbtqzj21wg0s4gqg.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1h2g3yn74llj212g0badht.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1h2g4un5dizj20ve0u0dip.jpg">
+<meta property="og:updated_time" content="2022-05-26T03:06:38.279Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Apple登录流程详解">
+<meta name="twitter:description" content="1：背景2019年苹果推出 苹果登录（Sign in with Apple）方式，要求2020年4月之后运行在iOS13及以上系统的APP如果使用第三方或社交登录服务（如 Facebook、谷歌、 Twitter、Linkedln或亚马逊等），必须向用户提供“以苹果账号登录”服务的选项。其中苹果的审核细则4.8也明确的规定了这一点。">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1h2lmep99kij21ns0rkaba.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="https://oliverqueen.cn/2022/05/26/Apple登录流程详解/"/>
+
+
+  <title>Apple登录流程详解 | Molier</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Molier</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Tomorrow is another day</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://oliverqueen.cn/2022/05/26/Apple登录流程详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Molier">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://image-1256056152.cos.ap-nanjing.myqcloud.com/shiba.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molier">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Apple登录流程详解</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-05-26T10:53:20+08:00">2022-05-26</time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2022-05-26T11:06:38+08:00">2022-05-26</time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/iOS开发/" itemprop="url" rel="index"><span itemprop="name">iOS开发</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="/assets/js/APlayer.min.js"> </script><h2 id="1：背景"><a href="#1：背景" class="headerlink" title="1：背景"></a>1：背景</h2><p>2019年苹果推出 苹果登录（Sign in with Apple）方式，要求2020年4月之后运行在iOS13及以上系统的APP如果使用第三方或社交登录服务（如 Facebook、谷歌、 Twitter、Linkedln或亚马逊等），必须向用户提供“以苹果账号登录”服务的选项。其中苹果的<a href="https://tva1.sinaimg.cn/large/e6c9d24egy1h2fzjjwwuaj21640p444d.jpg" target="_blank" rel="noopener">审核细则4.8</a>也明确的规定了这一点。</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h2lmep99kij21ns0rkaba.jpg" alt=""></p>
+<a id="more"></a>
+<p><font color="#dd0000">不过需要注意的一点是腾讯系列的产品如果只是使用微信、QQ登录并不算第三方登录，所以可以添加AppleID登录方式。</font><br> </p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h2fzjjwwuaj21640p444d.jpg" alt=""></p>
+<h2 id="2：前置配置"><a href="#2：前置配置" class="headerlink" title="2：前置配置"></a>2：前置配置</h2><h4 id="2-1-Xcode工程配置"><a href="#2-1-Xcode工程配置" class="headerlink" title="2.1 Xcode工程配置"></a>2.1 Xcode工程配置</h4><p>选中工程trager，在capabilities中添加AppleID登录的能力</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h2g28b5w8aj21960u0769.jpg" alt=""></p>
+<h4 id="2-2-开发者账号配置"><a href="#2-2-开发者账号配置" class="headerlink" title="2.2 开发者账号配置"></a>2.2 开发者账号配置</h4><p>基于授权码的后端验证方式需要此步骤，如果使用JWT验证方式则不依赖此步骤，不过建议按顺序看完多做了解。</p>
+<p>该步骤的最终目的是获取用于校验客户端身份的所需内容，其中包括以下三个内容</p>
+<ul>
+<li><p>生成一个用于校验客户端身份的密钥文件</p>
+</li>
+<li><p>获取KeyID</p>
+</li>
+<li><p>获取iss（TeamID）</p>
+</li>
+</ul>
+<p><font color="#dd0000">注意：该步骤需要登录Apple开发者账号并对其进行功能的配置、开启、以及描述文件更新等操作，可能需要证书管理团队或者有相关权限的人员来处理，并由他们将对应信息输出</font><br></p>
+<h5 id="步骤一：能力开启"><a href="#步骤一：能力开启" class="headerlink" title="步骤一：能力开启"></a><strong>步骤一：能力开启</strong></h5><p>进入开发者账号，选择需要支持AppleID登录能力的应用并进入打开其AppleID登录的功能<br><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h2g335dozbj219o0kiwg6.jpg" alt=""><br><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h2g36gha89j216x0u0gnx.jpg" alt=""></p>
+<h5 id="步骤二：更新profile"><a href="#步骤二：更新profile" class="headerlink" title="步骤二：更新profile"></a><strong>步骤二：更新profile</strong></h5><p>对app的任何更改都会导致现有的profile文件失效，所以需要重新生成profile描述文件。<br><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h2g38wg6kij20ia08qmxk.jpg" alt=""><br>按照如下路径操作，点进已经<code>invalid</code>的描述文件并重新生成<br><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h2g3em4u2oj21fq0lc75x.jpg" alt=""></p>
+<h5 id="步骤三：生成密钥文件"><a href="#步骤三：生成密钥文件" class="headerlink" title="步骤三：生成密钥文件"></a><strong>步骤三：生成密钥文件</strong></h5><p>进入如下界面点击<code>加号</code>进行生成<br><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h2g3hh2cz2j216m0ms406.jpg" alt=""></p>
+<p>填完并勾选<code>Sigin with apple</code>后点击右侧的<code>Configure</code>进行配置，在配置页面选择需要开启苹果登录的app并保存，然后回到上一页并开始注册<br><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h2g3kyolw0j21m10u043i.jpg" alt=""><br><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h2g3ps0bfjj21v70u0td1.jpg" alt=""><br><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h2g3qw6gvmj22120s0dkq.jpg" alt=""></p>
+<p>最终注册成功后会有KeyID、TeamID和可供下载的密钥文件<br><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h2g3umbtqzj21wg0s4gqg.jpg" alt=""></p>
+<p>密钥文件格式为.p8实际是文本文件<br><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h2g3yn74llj212g0badht.jpg" alt=""></p>
+<p><font color="#dd0000">注意：密钥文件只能被下载一次，下载后保存在安全的地方，丢了的话只能重新申请了</font><br></p>
+<h2 id="3：登录流程"><a href="#3：登录流程" class="headerlink" title="3：登录流程"></a>3：登录流程</h2><p>登录流程分两大块，一个是客户端部分，一个是后端部分，其中后端部分有两种校验方式<code>基于授权码的后端验证</code>、<code>基于JWT的算法验证</code>，稍后会一一讲解。总体流程如下图：</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h2g4un5dizj20ve0u0dip.jpg" alt=""></p>
+<h4 id="3-1-客户端侧"><a href="#3-1-客户端侧" class="headerlink" title="3.1 客户端侧"></a>3.1 客户端侧</h4><h5 id="步骤一：授权"><a href="#步骤一：授权" class="headerlink" title="步骤一：授权"></a><strong>步骤一：授权</strong></h5><p>对于客户端来说AppleID登录与传统的三方登录流程一样，分为<code>调用接口</code>与<code>回调信息获取</code>两步，唯一不同点是苹果登录的API是在iOS SDK内部封装，只用导入对应头文件即可<br><code>#import &lt;AuthenticationServices/AuthenticationServices.h&gt;</code></p>
+<p>关于登录入口，苹果对AppleID登录的UI有严格的限制，因此专门提供了提供了一套继承于<code>UIControl</code>等控件来供开发者使用<code>ASAuthorizationAppleIDButton</code></p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">ASAuthorizationAppleIDButton * appleIDBtn = [ASAuthorizationAppleIDButton <span class="string">buttonWithType:</span>ASAuthorizationAppleIDButtonTypeDefault <span class="string">style:</span>ASAuthorizationAppleIDButtonStyleWhite];</span><br><span class="line">appleIDBtn.frame = CGRectMake(<span class="number">0</span>, <span class="number">0</span>, <span class="number">100</span>, <span class="number">60</span>);</span><br><span class="line">[appleIDBtn <span class="string">addTarget:</span>self <span class="string">action:</span><span class="meta">@selector</span>(didAppleIDBtnClicked) <span class="string">forControlEvents:</span>UIControlEventTouchUpInside];</span><br><span class="line">[self.view <span class="string">addSubview:</span>appleIDBtn];</span><br></pre></td></tr></table></figure>
+<p>其中按钮的<code>文案类型</code>和<code>UI风格</code>可以通过枚举进行配置<br><figure class="highlight elm"><table><tr><td class="code"><pre><span class="line">//  文案类型</span><br><span class="line">typedef <span class="type">NS_ENUM</span>(<span class="type">NSInteger</span>, <span class="type">ASAuthorizationAppleIDButtonType</span>) &#123;</span><br><span class="line">    <span class="type">ASAuthorizationAppleIDButtonTypeSignIn</span>,</span><br><span class="line">    <span class="type">ASAuthorizationAppleIDButtonTypeContinue</span>,</span><br><span class="line"></span><br><span class="line">    <span class="type">ASAuthorizationAppleIDButtonTypeSignUp</span> <span class="type">API_AVAILABLE</span>(ios(13.2), macos(10.15.1), tvos(13.1)) <span class="type">API_UNAVAILABLE(watchos)</span>,</span><br><span class="line"></span><br><span class="line">    <span class="type">ASAuthorizationAppleIDButtonTypeDefault</span> = <span class="type">ASAuthorizationAppleIDButtonTypeSignIn</span>,</span><br><span class="line">&#125; <span class="type">NS_SWIFT_NAME</span>(<span class="type">ASAuthorizationAppleIDButton</span>.<span class="type">ButtonType</span>) <span class="type">API_AVAILABLE</span>(ios(13.0), macos(10.15), tvos(13.0)) <span class="type">API_UNAVAILABLE</span>(watchos);</span><br><span class="line"></span><br><span class="line">//  <span class="type">UI</span>风格</span><br><span class="line">typedef <span class="type">NS_ENUM</span>(<span class="type">NSInteger</span>, <span class="type">ASAuthorizationAppleIDButtonStyle</span>) &#123;</span><br><span class="line">    <span class="type">ASAuthorizationAppleIDButtonStyleWhite</span>,</span><br><span class="line">    <span class="type">ASAuthorizationAppleIDButtonStyleWhiteOutline</span>,</span><br><span class="line">    <span class="type">ASAuthorizationAppleIDButtonStyleBlack</span>,</span><br><span class="line">&#125; <span class="type">NS_SWIFT_NAME</span>(<span class="type">ASAuthorizationAppleIDButton</span>.<span class="type">Style</span>) <span class="type">API_AVAILABLE</span>(ios(13.0), macos(10.15), tvos(13.0)) <span class="type">API_UNAVAILABLE</span>(watchos);</span><br></pre></td></tr></table></figure></p>
+<p>但是并不推荐这种方式使用，原因如下：</p>
+<ul>
+<li>1：固定UI无法满足业务的定制化需求</li>
+<li>2：文案固定，多语言配置需要在单独的地方去配置文案</li>
+</ul>
+<p>所以建议自己写UI，直接在点击事件中调用AppleID的相关API进行授权登陆操作，具体代码为，其中<code>ASAuthorizationAppleIDRequest</code>为是否使用Keychain信息，如果如果 KeyChain 里面也有登录信息的话，可以直接使用里面保存的用户名和密码进行登录。可以根据实际业务需求来<br><figure class="highlight inform7"><table><tr><td class="code"><pre><span class="line">KINFO(@<span class="string">"<span class="subst">[AppleLoginWrapper]</span>开始苹果登录鉴权"</span>);</span><br><span class="line">if (@available(iOS 13.0, *)) &#123;</span><br><span class="line">    ASAuthorizationAppleIDProvider *provider = <span class="comment">[ASAuthorizationAppleIDProvider new]</span>;</span><br><span class="line">    ASAuthorizationAppleIDRequest *request = <span class="comment">[provider createRequest]</span>;</span><br><span class="line">    request.requestedScopes = @<span class="comment">[ ASAuthorizationScopeFullName, ASAuthorizationScopeEmail ]</span>; //请求的用户信息</span><br><span class="line">    ASAuthorizationPasswordRequest * keychainRequest = <span class="comment">[<span class="comment">[<span class="comment">[ASAuthorizationPasswordProvider alloc]</span> init]</span> createRequest]</span>;</span><br><span class="line"></span><br><span class="line">    ASAuthorizationController *vc = <span class="comment">[<span class="comment">[ASAuthorizationController alloc]</span> initWithAuthorizationRequests:@<span class="comment">[ request ,keychainRequest]</span>]</span>;</span><br><span class="line">    vc.delegate = self;</span><br><span class="line">    vc.presentationContextProvider = self;</span><br><span class="line">    <span class="comment">[vc performRequests]</span>;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    // Fallback on earlier versions</span><br><span class="line">    KINFO(@<span class="string">"<span class="subst">[AppleLoginWrapper]</span>iOS系统低于13"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="步骤二：信息回调"><a href="#步骤二：信息回调" class="headerlink" title="步骤二：信息回调"></a><strong>步骤二：信息回调</strong></h5><p>依赖的两个delegate<br><figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#pragma</span> <span class="selector-tag">mark-</span> 代理 <span class="selector-tag">ASAuthorizationControllerDelegate</span></span><br><span class="line"><span class="selector-tag">-</span> (void)<span class="selector-tag">authorizationController</span><span class="selector-pseudo">:(ASAuthorizationController</span> *)<span class="selector-tag">controller</span> <span class="selector-tag">didCompleteWithAuthorization</span><span class="selector-pseudo">:(ASAuthorization</span> *)<span class="selector-tag">authorization</span> &#123;</span><br><span class="line">    <span class="comment">//  成功</span></span><br><span class="line">    <span class="comment">//  其中`authorization.credential`包含了Token，用户ID等授权所需信息，可上报到后台</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">-</span> (void)<span class="selector-tag">authorizationController</span><span class="selector-pseudo">:(ASAuthorizationController</span> *)<span class="selector-tag">controller</span> <span class="selector-tag">didCompleteWithError</span><span class="selector-pseudo">:(NSError</span> *)<span class="selector-tag">error</span> &#123;</span><br><span class="line">    <span class="comment">//  失败</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#pragma</span> <span class="selector-tag">mark-</span> 代理<span class="selector-tag">ASAuthorizationControllerPresentationContextProviding</span></span><br><span class="line"><span class="selector-tag">-</span> (ASPresentationAnchor)<span class="selector-tag">presentationAnchorForAuthorizationController</span><span class="selector-pseudo">:(ASAuthorizationController</span> *)<span class="selector-tag">controller</span> &#123;</span><br><span class="line">    <span class="comment">//  展示在哪个Window上</span></span><br><span class="line">    <span class="selector-tag">return</span> <span class="selector-tag">self</span><span class="selector-class">.view</span><span class="selector-class">.window</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="步骤三：用户ID状态校验"><a href="#步骤三：用户ID状态校验" class="headerlink" title="步骤三：用户ID状态校验"></a><strong>步骤三：用户ID状态校验</strong></h5><p>防止用户注销 AppleId 或 停止使用 Apple ID 的状态处理<br><figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">- (BOOL)<span class="string">application:</span>(UIApplication *)application <span class="string">didFinishLaunchingWithOptions:</span>(NSDictionary *)launchOptions &#123;</span><br><span class="line">    <span class="comment">// Override point for customization after application launch.</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="meta">@available</span>(iOS <span class="number">13.0</span>, *)) &#123;</span><br><span class="line">        <span class="comment">// 注意 存储用户标识信息需要使用钥匙串来存储 这里使用NSUserDefaults 做的简单示例</span></span><br><span class="line">        NSString * userIdentifier = [[NSUserDefaults standardUserDefaults] <span class="string">valueForKey:</span>@<span class="string">"appleID"</span>];</span><br><span class="line">        <span class="keyword">if</span> (userIdentifier) &#123;</span><br><span class="line">            ASAuthorizationAppleIDProvider * appleIDProvider = [[ASAuthorizationAppleIDProvider alloc] init];</span><br><span class="line">            [appleIDProvider <span class="string">getCredentialStateForUserID:</span>userIdentifier</span><br><span class="line"><span class="symbol">                                              completion:</span>^(ASAuthorizationAppleIDProviderCredentialState credentialState, NSError * _Nullable error) &#123;</span><br><span class="line">                <span class="keyword">switch</span> (credentialState) &#123;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">ASAuthorizationAppleIDProviderCredentialAuthorized:</span></span><br><span class="line">                        <span class="comment">// 授权状态有效</span></span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">ASAuthorizationAppleIDProviderCredentialRevoked:</span></span><br><span class="line">                        <span class="comment">// 苹果账号登录的凭据已被移除，需解除绑定并重新引导用户使用苹果登录</span></span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">ASAuthorizationAppleIDProviderCredentialNotFound:</span></span><br><span class="line">                        <span class="comment">// 未登录授权，直接弹出登录页面，引导用户登录</span></span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">ASAuthorizationAppleIDProviderCredentialTransferred:</span></span><br><span class="line">                        <span class="comment">// 授权AppleID提供者凭据转移</span></span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> YES;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="3-2-Sever侧"><a href="#3-2-Sever侧" class="headerlink" title="3.2 Sever侧"></a>3.2 Sever侧</h4><p>基于上面流程图，Sever侧校验Token有效性的方式有两种：</p>
+<h5 id="方式一：基于授权码的后端验证"><a href="#方式一：基于授权码的后端验证" class="headerlink" title="方式一：基于授权码的后端验证"></a><strong>方式一：基于授权码的后端验证</strong></h5><p>后端在收到客户端传递的包含token的信息后进行验证</p>
+<ul>
+<li><p>构建 client_secret</p>
+  <figure class="highlight processing"><table><tr><td class="code"><pre><span class="line">-----BEGIN PRIVATE KEY-----</span><br><span class="line">BASE64编码后的密钥 (步骤<span class="number">2.2</span>中获得)</span><br><span class="line">-----END PRIVATE KEY-----</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span>  <span class="built_in">byte</span>[] readKey() <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    <span class="keyword">String</span> temp = <span class="string">"密钥文件中间的编码字符串"</span>;</span><br><span class="line">    <span class="keyword">return</span> Base64.decodeBase64(temp);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">构建client_secret关键代码：</span><br><span class="line"></span><br><span class="line"><span class="keyword">String</span> client_id = <span class="string">"..."</span>; <span class="comment">// 被授权的APP ID(步骤2.2中获得)</span></span><br><span class="line">Map&lt;<span class="keyword">String</span>, <span class="keyword">Object</span>&gt; header = <span class="keyword">new</span> <span class="keyword">HashMap</span>&lt;<span class="keyword">String</span>, <span class="keyword">Object</span>&gt;();</span><br><span class="line">header.put(<span class="string">"kid"</span>, <span class="string">"密钥id"</span>); <span class="comment">// 参考后台配置(步骤2.2中获得)</span></span><br><span class="line">Map&lt;<span class="keyword">String</span>, <span class="keyword">Object</span>&gt; claims = <span class="keyword">new</span> <span class="keyword">HashMap</span>&lt;<span class="keyword">String</span>, <span class="keyword">Object</span>&gt;();</span><br><span class="line">claims.put(<span class="string">"iss"</span>, <span class="string">"team id"</span>); <span class="comment">// 参考后台配置 team id(步骤2.2中获得)</span></span><br><span class="line"><span class="keyword">long</span> now = System.currentTimeMillis() / <span class="number">1000</span>;</span><br><span class="line">claims.put(<span class="string">"iat"</span>, now);</span><br><span class="line">claims.put(<span class="string">"exp"</span>, now + <span class="number">86400</span> * <span class="number">30</span>); <span class="comment">// 最长半年，单位秒</span></span><br><span class="line">claims.put(<span class="string">"aud"</span>, <span class="string">"https://appleid.apple.com"</span>); <span class="comment">// 默认值</span></span><br><span class="line">claims.put(<span class="string">"sub"</span>, client_id);</span><br><span class="line">PKCS8EncodedKeySpec pkcs8EncodedKeySpec = <span class="keyword">new</span> PKCS8EncodedKeySpec(readKey());</span><br><span class="line">KeyFactory keyFactory = KeyFactory.getInstance(<span class="string">"EC"</span>);</span><br><span class="line">PrivateKey privateKey = keyFactory.generatePrivate(pkcs8EncodedKeySpec);</span><br><span class="line"><span class="keyword">String</span> client_secret = Jwts.builder().setHeader(header).setClaims(claims).signWith(SignatureAlgorithm.ES256, privateKey).compact();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>验证客户端Token</p>
+  <figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">String</span> url = <span class="string">"https://appleid.apple.com/auth/token"</span>;</span><br><span class="line"><span class="comment">// POST 请求</span></span><br><span class="line">HttpSynClient client = <span class="keyword">new</span> HttpSynClient(<span class="number">5000</span>, <span class="number">5000</span>, <span class="number">5000</span>, <span class="number">20</span>);</span><br><span class="line">Map&lt;<span class="keyword">String</span>, <span class="keyword">String</span>&gt; form = <span class="keyword">new</span> HashMap&lt;<span class="keyword">String</span>, <span class="keyword">String</span>&gt;();</span><br><span class="line">form.<span class="built_in">put</span>(<span class="string">"client_id"</span>, client_id);</span><br><span class="line">form.<span class="built_in">put</span>(<span class="string">"client_secret"</span>, client_secret);</span><br><span class="line">form.<span class="built_in">put</span>(<span class="string">"code"</span>, code);form.<span class="built_in">put</span>(<span class="string">"grant_type"</span>,<span class="string">"authorization_code"</span>);</span><br><span class="line">form.<span class="built_in">put</span>(<span class="string">"redirect_uri"</span>, redirectUrl);</span><br><span class="line">HttpResponse result = client.excutePost(url, form);</span><br><span class="line">System.out.<span class="built_in">println</span>(result);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>上述步骤结束后即可将结果回调给客户端，进行登录或者是错误处理</p>
+<ul>
+<li><p>成功示例</p>
+  <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="attr">"access_token"</span>:<span class="string">"a0996b16cfb674c0eb0d29194c880455b.0.nsww.5fi5MVC-i3AVNhddrNg7Qw"</span>,</span><br><span class="line"><span class="attr">"token_type"</span>:<span class="string">"Bearer"</span>,</span><br><span class="line"><span class="attr">"expires_in"</span>:<span class="number">3600</span>,</span><br><span class="line"><span class="attr">"refresh_token"</span>:<span class="string">"r9ee922f1c8b048208037f78cd7dfc91a.0.nsww.KlV2TeFlTr7YDdZ0KtvEQQ"</span>,</span><br><span class="line"><span class="attr">"id_token"</span>:<span class="string">"eyJraWQiOiJBSURPUEsxIiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJodHRwczovL2FwcGxlaWQuYXBwbGUuY29tIiwiYXVkIjoiY29tLnNreW1pbmcuYXBwbGVsb2dpbmRlbW8iLCJleHAiOjE1NjU2NjU1OTQsImlhdCI6MTU2NTY2NDk5NCwic3ViIjoiMDAwMjY2LmRiZTg2NWIwYWE3MjRlMWM4ODM5MDIwOWI5YzdkNjk1LjAyNTYiLCJhdF9oYXNoIjoiR0ZmODhlX1ptc0pqQ2VkZzJXem85ZyIsImF1dGhfdGltZSI6MTU2NTY2NDk2M30.J6XFWmbr0a1hkJszAKM2wevJF57yZt-MoyZNI9QF76dHfJvAmFO9_RP9-tz4pN4ua3BuSJpUbwzT2xFD_rBjsNWkU-ZhuSAONdAnCtK2Vbc2AYEH9n7lB2PnOE1mX5HwY-dI9dqS9AdU4S_CjzTGnvFqC9H5pt6LVoCF4N9dFfQnh2w7jQrjTic_JvbgJT5m7vLzRx-eRnlxQIifEsHDbudzi3yg7XC9OL9QBiTyHdCQvRdsyRLrewJT6QZmi6kEWrV9E21WPC6qJMsaIfGik44UgPOnNnjdxKPzxUAa-Lo1HAzvHcAX5i047T01ltqvHbtsJEZxAB6okmwco78JQA"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>失败示例</p>
+  <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="attr">"error"</span>: <span class="string">"invalid_client"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="方式二：基于JWT验证原理"><a href="#方式二：基于JWT验证原理" class="headerlink" title="方式二：基于JWT验证原理"></a><strong>方式二：基于JWT验证原理</strong></h5><ul>
+<li><p>获取苹果公钥，并保存</p>
+<p>  用到公钥接口 <code>https://appleid.apple.com/auth/keys</code><br>  返回值样例</p>
+  <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;  </span><br><span class="line">    <span class="attr">"keys"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">        <span class="attr">"kty"</span>: <span class="string">"RSA"</span>, </span><br><span class="line">        <span class="attr">"kid"</span>: <span class="string">"AIDOPK1"</span>,</span><br><span class="line">        <span class="attr">"use"</span>: <span class="string">"sig"</span>,</span><br><span class="line">        <span class="attr">"alg"</span>: <span class="string">"RS256"</span>,</span><br><span class="line">        <span class="attr">"n"</span>: <span class="string">"lxrwmuYSAsTfn-lUu4goZSXBD9ackM9OJuwUVQHmbZo6GW4Fu_auUdN5zI7Y1dEDfgt7m7QXWbHuMD01HLnD4eRtY-RNwCWdjNfEaY_esUPY3OVMrNDI15Ns13xspWS3q-13kdGv9jHI28P87RvMpjz_JCpQ5IM44oSyRnYtVJO-320SB8E2Bw92pmrenbp67KRUzTEVfGU4-obP5RZ09OxvCr1io4KJvEOjDJuuoClF66AT72WymtoMdwzUmhINjR0XSqK6H0MdWsjw7ysyd_JhmqX5CAaT9Pgi0J8lU_pcl215oANqjy7Ob-VMhug9eGyxAWVfu_1u6QJKePlE-w"</span>,</span><br><span class="line">        <span class="attr">"e"</span>: <span class="string">"AQAB"</span></span><br><span class="line">        &#125;  </span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>验证客户端的Token有效性</p>
+<p>  客户端会传以下几个值给服务端</p>
+<ul>
+<li>userID：授权的用户唯一标识</li>
+<li>email、fullName：授权的用户资料</li>
+<li>authorizationCode：授权code</li>
+<li><p>identityToken：授权用户的JWT凭证<br>示例 identityToken：授权用户的JWT凭证</p>
+  <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">eyJraWQiOiJBSURPUEsxIiwiYWxnIjoiUlMyNTYifQ<span class="selector-class">.eyJpc3MiOiJodHRwczovL2FwcGxlaWQuYXBwbGUuY29tIiwiYXVkIjoiY29tLmZ1bi5BcHBsZUxvZ2luIiwiZXhwIjoxNTY4NzIxNzY5LCJpYXQiOjE1Njg3MjExNjksInN1YiI6IjAwMDU4MC4wODdjNTU0ZGNlMzU0NjZmYTg1YzVhNWQ1OTRkNTI4YS4wODAxIiwiY19oYXNoIjoiel9KY0RscFczQjJwN3ExR0Nna1JaUSIsImF1dGhfdGltZSI6MTU2ODcyMTE2OX0</span><span class="selector-class">.WmSa4LzOzYsdwTqAJ_8mub4Ls3eyFkxZoGLoy-U7DatsTd_JEwAs3_OtV4ucmj6ENT3153iCpYY6vBxSQromOMcXsN74IrUQew24y_zflN2g4yU8ZVvBCbTrR_6p9f2fbeWjZiyNcbPCha0dv45E3vBjyHhmffWnk3vyndBBiwwuqod4pyCZ3UECf6Vu-o7dygKFpMHPS1ma60fEswY5d-_TJAFk1HaiOfFo0XbL6kwqAGvx8HnraIxyd0n8SbBVxV_KDxf15hdotUizJDW7N2XMdOGQpNFJim9SrEeBhn9741LWqkWCgkobcvYBZsrvnUW6jZ87SLi15rvIpq8_fw</span></span><br></pre></td></tr></table></figure>
+<p>token被解密后分为三个部分</p>
+</li>
+<li><p>header: 包括了key id 与加密算法</p>
+</li>
+<li><p>payload:</p>
+<ul>
+<li>iss: 签发机构，苹果</li>
+<li>aud: 接收者，目标app</li>
+<li>exp：过期时间</li>
+<li>iat: 签发时间</li>
+<li>sub: 用户id</li>
+<li>c_hash: 一个哈希数列</li>
+<li>auth_time: 签名时间</li>
+</ul>
+</li>
+<li>signature: 用于验证JWT的签名</li>
+</ul>
+</li>
+<li><p>Token验证原理：</p>
+<p>  因为idnetityToken使用非对称加密 RSASSA【RSA签名算法】 和 ECDSA【椭圆曲线数据签名算法】，当验证签名的时候，利用公钥来解密Singature，当解密内容与base64UrlEncode(header) + “.” + base64UrlEncode(payload)的内容完全一样的时候，表示验证通过。</p>
+</li>
+<li><p>防止中间人攻击原理：</p>
+<p>  该token是苹果利用私钥生成的一段JWT，并给出公钥我们对token进行验证，由于中间人并没有苹果的私钥，所以它生成出来的token是没有办法利用苹果给出的公钥进行验证的，确保的token的安全性。</p>
+</li>
+</ul>
+<h2 id="4-总结"><a href="#4-总结" class="headerlink" title="4 总结"></a>4 总结</h2><p>目前使用的是基于授权码的后端验证方式，每次收到客户端登录请求后都会像苹果服务器发送post请求来验证，导致受网络影响较大。如果改成第一种方式后，除了获取公钥外不再依赖网络请求，可降低网络异常情况带来的损失。但是服务端要定期刷新公钥，防止公钥变化带来的验证失败</p>
+<h2 id="5-参考文档"><a href="#5-参考文档" class="headerlink" title="5 参考文档"></a>5 参考文档</h2><p><a href="https://developer.okta.com/blog/2019/06/04/what-the-heck-is-sign-in-with-apple" target="_blank" rel="noopener">https://developer.okta.com/blog/2019/06/04/what-the-heck-is-sign-in-with-apple</a></p>
+<p><a href="https://developer.apple.com/cn/sign-in-with-apple/" target="_blank" rel="noopener">https://developer.apple.com/cn/sign-in-with-apple/</a></p>
+<p><a href="https://developer.apple.com/documentation/signinwithapplerestapi/generate_and_validate_tokens" target="_blank" rel="noopener">https://developer.apple.com/documentation/signinwithapplerestapi/generate_and_validate_tokens</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Molier
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://oliverqueen.cn/2022/05/26/Apple登录流程详解/" title="Apple登录流程详解">https://oliverqueen.cn/2022/05/26/Apple登录流程详解/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+            <a href="/tags/Apple登录/" rel="tag"># Apple登录</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/07/27/如何做好一场Presentation/" rel="next" title="如何做好一场Presentation">
+                <i class="fa fa-chevron-left"></i> 如何做好一场Presentation
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://image-1256056152.cos.ap-nanjing.myqcloud.com/shiba.gif"
+                alt="Molier" />
+            
+              <p class="site-author-name" itemprop="name">Molier</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">35</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    <span class="site-state-item-count">50</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:371099694@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/zhangninghao?refer_flag=1005055010_" target="_blank" title="新浪微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>新浪微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/fd21f41fb522" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-superpowers"></i>简书</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://juejin.im/user/586c624bac502e12d631545f" target="_blank" title="掘金">
+                      
+                        <i class="fa fa-fw fa-juejin"></i>掘金</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Friends
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://reuixiy.github.io/" rel="external nofollow" title="reuixiy" target="_blank">reuixiy</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://billchan.me/" rel="external nofollow" title="CMB" target="_blank">CMB</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://mashirosorata.vicp.io/" rel="external nofollow" title="Mashiro_Sorata" target="_blank">Mashiro_Sorata</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.saitjr.com/" rel="external nofollow" title="saitjr <br>(iOS大神，持续集成，几乎全栈)" target="_blank">saitjr <br>(iOS大神，持续集成，几乎全栈)</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+         
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1：背景"><span class="nav-text">1：背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2：前置配置"><span class="nav-text">2：前置配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-Xcode工程配置"><span class="nav-text">2.1 Xcode工程配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-开发者账号配置"><span class="nav-text">2.2 开发者账号配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#步骤一：能力开启"><span class="nav-text">步骤一：能力开启</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#步骤二：更新profile"><span class="nav-text">步骤二：更新profile</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#步骤三：生成密钥文件"><span class="nav-text">步骤三：生成密钥文件</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3：登录流程"><span class="nav-text">3：登录流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-客户端侧"><span class="nav-text">3.1 客户端侧</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#步骤一：授权"><span class="nav-text">步骤一：授权</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#步骤二：信息回调"><span class="nav-text">步骤二：信息回调</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#步骤三：用户ID状态校验"><span class="nav-text">步骤三：用户ID状态校验</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-Sever侧"><span class="nav-text">3.2 Sever侧</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#方式一：基于授权码的后端验证"><span class="nav-text">方式一：基于授权码的后端验证</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方式二：基于JWT验证原理"><span class="nav-text">方式二：基于JWT验证原理</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-总结"><span class="nav-text">4 总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-参考文档"><span class="nav-text">5 参考文档</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Molier</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">茉莉儿的小站</div>
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.1"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+<script type="text/javascript">
+const gitalk = new Gitalk({
+clientID: '991238e983176ecf9dbd',
+clientSecret: '299ec7e920c736040adf969a0b0a4148ade5953f',
+repo: 'GitMent',
+owner: 'MolierQueen',
+admin: 'MolierQueen'.split(','),
+pagerDirection: 'first',
+id: md5(window.location.pathname),
+distractionFreeMode: false
+})
+gitalk.render('gitalk-container')
+</script>
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,Facebook,Twitter,Linkedin";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+<!-- <script type="text/javascript"
+color="255,255,255" opacity='1' zIndex="-2" count="100" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script> -->
+
+
+</body>
+</html>
